@@ -46,3 +46,7 @@ def list_products(products)
 
   puts table
 end
+
+
+def delete_product
+end
