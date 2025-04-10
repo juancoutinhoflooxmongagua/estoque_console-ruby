@@ -1,4 +1,5 @@
 require_relative('./operations_display')
+require_relative('../controller/product_controller')
 
 def open_menu
     loop do 
@@ -12,11 +13,12 @@ def open_menu
   
       case option
       when 1
-        success_message 'Cadastro'
+        message "Cadastro"
+        create_product
       when 2
-        success_message "Lista" 
+        message "Lista" 
       when 3
-        success_message "Retirada"
+        message "Retirada"
       when 4
         clean_display()
         exit

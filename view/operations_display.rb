@@ -1,30 +1,22 @@
-def message(msg, timer = 5, color = :default)
-    clean_display
-  
+def message(msg, color: :default)
     puts colorize(msg, color)
-    sleep(timer)
-  
-    clean_display
   end
   
-  def success_message(msg, timer = 5)
-    message(msg, timer, :green)
+  def success_message(msg)
+    message(msg, color: :green)
   end
   
-  def warning_message(msg, timer = 5)
-    message(msg, timer, :yellow)
+  def warning_message(msg)
+    message(msg, color: :yellow)
   end
   
-  def error_message(msg, timer = 5)
-    message(msg, timer, :red)
+  def error_message(msg)
+    message(msg, color: :red)
   end
   
-  def clean_display
-    if Gem.win_platform?
-      system("cls")
-    else
-      system("clear")
-    end
+  def pause
+    puts "\nPressione Enter para continuar..."
+    gets
   end
   
   def colorize(text, color)
