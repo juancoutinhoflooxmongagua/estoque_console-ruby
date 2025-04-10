@@ -35,18 +35,37 @@ def list_products(products)
   end
 
   rows = products.map do |p|
-    [p[:name], p[:description], p[:price], p[:stock]]
+    [p[:id], p[:name], p[:description], p[:price], p[:stock]]
   end
 
   table = Terminal::Table.new(
     title: "Lista de Produtos",
-    headings: ['Nome', 'Descrição', 'Preço (R$)', 'Estoque'],
+    headings: ['ID', 'Nome', 'Descrição', 'Preço (R$)', 'Estoque'],
     rows: rows
   )
 
   puts table
 end
 
+def delete_product(products)
+  print "Digite o ID do produto que você quer excluir: "
+  id = gets.to_i
 
-def delete_product
+  product = products.find { |p| p[:id] == id }
+
+  if product.nil?
+    puts "Produto não existente."
+    return
+  end
+
+  print "Digite a quantidade a ser removida: "
+  back_qtd = gets.to_i
+
+  if back_qtd > product[:stock]
+    puts "Quantidade maior que o estoque. Nada feito."
+  else
+    product[:stock] -= back_qtd
+    puts "Quantidade atualizada. Novo estoque: #{product[:stock]}"
+    products.delete(product) if product[:stock] <= 0
+  end
 end

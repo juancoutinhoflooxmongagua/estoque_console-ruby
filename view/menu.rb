@@ -17,7 +17,7 @@ def open_menu(products)
       when 2
         list_products(products)
       when 3
-        message "Retirada"
+        delete_product(products)
       when 4
         clean_display()
         exit
