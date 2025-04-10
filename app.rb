@@ -1,4 +1,5 @@
-require_relative 'display/menu.rb'
-require_relative 'display/operations_display.rb'
+require_relative 'model/product'
+require_relative 'view/menu'
+require_relative 'view/operations_display'
 
 open_menu

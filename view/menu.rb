@@ -12,16 +12,16 @@ def open_menu
   
       case option
       when 1
-        message 'Cadastro'
+        success_message 'Cadastro'
       when 2
-        message "Lista" 
+        success_message "Lista" 
       when 3
-        message "Retirada"
+        success_message "Retirada"
       when 4
         clean_display()
         exit
       else
-        message "invalid option"
+        error_message "invalid option"
       end
     end
   end
