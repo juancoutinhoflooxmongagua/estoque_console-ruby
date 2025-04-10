@@ -1,3 +1,5 @@
+require_relative('./operations_display')
+
 def open_menu
     loop do 
       p "Options:"
@@ -10,15 +12,23 @@ def open_menu
   
       case option
       when 1
-        p "Cadastro"
+        message 'Cadastro'
+
+        clean_display()
       when 2
-        p "Lista"
+        message "Lista" 
+        
+        clean_display()
       when 3
-        p "Retirada"
+        message "Retirada"
+  
+        clean_display()
       when 4
         exit
       else
-        p "invalid option"
+        message "invalid option"
+        
+        clean_display()
       end
     end
   end
