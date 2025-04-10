@@ -1,6 +1,4 @@
-require_relative('../model/product.rb')
-
-def create_product
+def create_product(products)
     message "Digite o nome do produto:"
     nome = gets.chomp
     

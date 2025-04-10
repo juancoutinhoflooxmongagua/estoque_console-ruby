@@ -19,6 +19,14 @@ def message(msg, color: :default)
     gets
   end
   
+  def clean_display
+    if Gem.win_platform?
+      system("cls")
+    else
+      system("clear")
+    end
+  end
+  
   def colorize(text, color)
     codes = {
       red: "\e[31m",

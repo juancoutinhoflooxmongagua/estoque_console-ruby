@@ -1,7 +1,7 @@
 require_relative('./operations_display')
 require_relative('../controller/product_controller')
 
-def open_menu
+def open_menu(products)
     loop do 
       p "Options:"
       p "1. Register Products"
@@ -13,8 +13,7 @@ def open_menu
   
       case option
       when 1
-        message "Cadastro"
-        create_product
+        create_product(products)
       when 2
         message "Lista" 
       when 3
