@@ -16,7 +16,7 @@ def open_menu
       when 3
         p "Retirada"
       when 4
-        break
+        exit
       else
         p "invalid option"
       end
