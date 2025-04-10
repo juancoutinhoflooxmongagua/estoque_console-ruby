@@ -15,7 +15,7 @@ def open_menu(products)
       when 1
         create_product(products)
       when 2
-        message "Lista" 
+        list_products(products)
       when 3
         message "Retirada"
       when 4
